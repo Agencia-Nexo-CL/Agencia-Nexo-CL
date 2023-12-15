@@ -1,3 +1,3 @@
 function mensaje(){
-    alert("Esta página ha sido creada con amor por bm0x. ❤️")
+    alert("Esta página ha sido creada con amor por bm0x. ❤️ \nCambios referentes a la versión 2.0:\n\n-Se Corrigienron varios errores de tipeo\n-se corrigió el número de teléfono y nombre de documento")
 }
