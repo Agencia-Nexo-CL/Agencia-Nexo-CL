@@ -633,7 +633,16 @@ section {
 					padding-block-start: 1rem;
 				}
 
+				.title-sub {
+					padding-block-start: 1rem;
+				}
+
 				.subtitle {
+					padding-block-start: 0.25rem;
+					padding-block-end: 1rem;
+					opacity: 0.5;
+				}
+				.subtitle-2 {
 					padding-block-start: 0.25rem;
 					padding-block-end: 1rem;
 					opacity: 0.5;
@@ -652,8 +661,12 @@ section {
 		margin-bottom: 10%;
 	}
 
-	#cony {
-		margin-top: 8%;
+	.title-sub {
+		font-size: 17px;
+
+		& #cony {
+			bottom: 10%;
+		}
 	}
 
 	#card-3{
