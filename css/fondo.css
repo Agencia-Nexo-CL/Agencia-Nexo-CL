@@ -72,7 +72,7 @@ header {
 	--position: relative;
 	--b: 0;
 	--s: 10%;
-	--nav-bg: var(--black);
+	--nav-bg: var(--carmesi-red);
 
 	position: sticky;
 	top: 0;
@@ -99,6 +99,7 @@ header {
 		.burger {
 			display: var(--show);
       background-color: var(--header-bg);
+	  color: white;
 			
 			& path {
 				fill: none;
@@ -219,7 +220,7 @@ header {
 		--position: absolute;
 		--translateY: -100%;
 		--show: block;
-		--nav-bg: var(--green);
+		--nav-bg: var(--carmesi-red);
 
 		& nav {
 			top: 0;
