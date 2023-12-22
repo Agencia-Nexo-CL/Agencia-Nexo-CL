@@ -142,7 +142,7 @@ header {
 	.float{
 		position:fixed;
 		width:160px;
-		height:30px;
+		height:35px;
 		bottom:40px;
 		right:40px;
 		background-color:#25d366;
@@ -154,9 +154,10 @@ header {
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
-	  	font-size:18px;
+	  	font-size:21px;
 		box-shadow: 2px 2px 3px #999;
 	 	z-index:100;
+		text-decoration: none;
 	}
 	
 	.my-float{
@@ -263,7 +264,7 @@ a {
 
 	/* animation */
 	animation: avtive-link both linear;
-	anchor-name: var(--an);
+	scroll-margin-top: var(--an);
 	animation-timeline: var(--at);
 
 	&:not(:hover) {
