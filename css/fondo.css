@@ -171,6 +171,7 @@ header {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		height: 70px;
 
 		/* blur background */
 		background-color: var(--header-bg);
@@ -187,6 +188,10 @@ header {
 				padding: 0.5rem 1rem;
 				color: var(--text-color);
 				transition: transform 0.25s var(--cubic);
+
+				& a {
+					text-decoration: none;
+				}
 
 				&::after {
 					position: absolute;
