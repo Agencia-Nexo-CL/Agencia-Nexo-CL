@@ -1,3 +1,0 @@
-function mensaje(){
-    alert("Esta página ha sido creada con amor por bm0x. ❤️ \nCambios referentes a la versión 2.0.3:\n\n- Se Corrigen varios errores internos de código: \n-Se Refactoriza botón WhatsApp para que información sea mucho más privada usando elementos de JavaScript \n-Se Estiliza de mejor manera la NavBar de la página (Thanks to BenjaMercado) \n-Se corrige error de visualizaciónes generales.")
-}
