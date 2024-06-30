@@ -3,9 +3,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Actualización 3.0</title>
+  <title>Neo NEXO - 3.0</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
-<body>
-  Pagina en proceso de actualización
+<body class="overflow-y-hidden select-none">
+
+    <div class="bg-[#14213d] h-full absolute opacity-35 z-[-2]">
+        <video class="w-full" id="video-fondo" autoplay muted loop>
+            <source src="video/0509.mp4" type="video/mp4">
+        </video>   
+    </div> <!--Video de Fondo Agencia Nexo-->
+
+
+    <div class="absolute block w-[1000px] left-[22%] top-[30%] mx-auto z-[-1]"> <!--Pantalla Principal-->
+        <div class="size-[500px] mx-auto">
+            <img src="img/nexo_1.png" alt="">
+        </div>
+        <img src="img/TAGLINE.png" class="w-[600px] mt-[-30%] mx-auto" alt="">
+        <!--<h1 class="font-bold text-3xl uppercase grote tracking-widest mx-auto text-white break-normal mt-[-25%] ml-[26%]">Conectamos con tus ideas</h1>-->
+        <div class="absolute justify-center items-center left-[45%] mt-[5%] mx-auto">
+          <button id="info" class="bg-white text-zinc-700 font-bold py-2 px-4 rounded-lg hover:bg-zinc-700 hover:text-white transition ml-[-5%] duration-300 uppercase">Conoce Más</button>
+        </div>
+    </div> <!--Banner Logo y Texto Nexo-->
+
+    <div id="trabajos" class="bg-[#242424] absolute top-[10%] text-white h-[750px] w-screen mx-auto opacity-100 z-1 hidden" style="animation: modalOpen 0.5s ease-out;"> <!--Pantalla Trabajos--> 
+        <nav class="h-[70px] relative">
+            <img class="absolute flex h-[60px] top-[50%] left-[45%] items-center justify-center" src="img/nexo_1.png" alt="">
+            <div class="grid gris-cols-7 pr-[3%] pt-[5%] ml-[3%] justify-center items-center">
+                <div class="col-start-1 text-lg mx-auto font-bold cursor-pointer">
+                    <ul class="flex space-x-4">
+                      <li class="bg-white text-zinc-700 rounded-lg p-2"><i class="ri-service-fill"></i> Servicios</li> 
+                      <!--<li><p class="hover:bg-[#ff4d02] hover:bg-zinc-700 hover:text-white rounded-lg p-2 transition duration-300"><i class="ri-team-fill"></i> Sobre Nosotros</p></li> -->
+                      <!--<li><p class="hover:bg-[#ff4d02] hover:bg-zinc-700 hover:text-white rounded-lg p-2 transition duration-300"><i class="ri-news-fill"></i> Blogs</p></li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="absolute right-[3%] top-[50%] p-2 transition-all duration-500">
+              <i id="cerrar-1" class="text-3xl font-bold text-white cursor-pointer ri-close-large-line"></i>
+            </div>
+        </nav>
+
+        <div class="flex carousel mx-auto carousel-center p-20 mr-[3%] mt-[7%] space-x-10 w-[1850px] h-[580px]" style="animation: modalOpen 0.5s ease-out;"> <!--Carrusel de Trabajos-->
+              <div class="carousel-item relative cursor-pointer open-modal" data-modal="disenoPop">
+                <img src="img/1.jpg" class="rounded-box" />
+                <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center rounded-box justify-center opacity-0 hover:opacity-100 transition duration-500">
+                </div>
+              </div>
+            <div class="carousel-item relative cursor-pointer open-modal" data-modal="redesPop">
+              <img src="img/2.jpg" class="rounded-box" />
+              <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center rounded-box justify-center opacity-0 hover:opacity-100 transition duration-500">
+              </div>
+            </div> 
+            <div class="carousel-item relative cursor-pointer open-modal" data-modal="paginaPop">
+              <img src="img/3.jpg" class="rounded-box" />
+              <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center rounded-box justify-center opacity-0 hover:opacity-100 transition duration-500">
+              </div>
+            </div> 
+            <div class="carousel-item relative cursor-pointer open-modal" data-modal="gestionPop">
+              <img src="img/4.jpg" class="rounded-box" />
+              <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center rounded-box justify-center opacity-0 hover:opacity-100 transition duration-500">
+              </div>
+            </div> 
+            <div class="carousel-item relative cursor-pointer open-modal" data-modal="rodajePop">
+              <img src="img/5.jpg" class="rounded-box" />
+              <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center rounded-box justify-center opacity-0 hover:opacity-100 transition duration-500">
+              </div>
+            </div>
+    </div>
+
+    <div id="disenoPop" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center" style="z-index: 1000;"> <!--Modal Diseño-->
+      <div class="bg-[#242424] p-5 rounded-lg w-[1050px] h-[550px] flex flex-col" style="animation: modalOpen 0.5s ease-out;">
+        <div class="flex justify-between items-start">
+          <h3 class="mt-[5%] grote tracking-widest inline-block text-3xl align-bottom font-medium mx-auto text-center bg-[#ffc503] text-[#242424] h-[40px] w-[240px] uppercase pt-[0.5%]">
+            Diseño
+          </h3>
+          <button class="close-modal text-3xl text-white" data-modal="disenoPop"><i class="ri-close-circle-fill"></i></button>
+        </div>
+        <div class="p-4 md:p-5 space-y-4 ml-[12%] mt-[2%] mx-auto w-[400px]"> <!--Contenido Modal Diseño-->
+          <p class="text-2xl font-bold leading-none miligram text-center tracking-widest text-white w-[700px]">
+              El branding o marca es esencial para tu tienda ya que  te distingue de la competencia, crea una conexión emocional con tus clientes y construye lealtad a largo plazo. este consistente en transmitir tu identidad, valores y promesas de marca, generando confianza y atrayendo a tu público objetivo. Además, facilita la memorabilidad y el reconocimiento, lo que impulsa las ventas y el crecimiento de tu negocio.
+          </p>
+          <div class="grid mx-auto grid-flow-col-dense w-[800px] ml-[-12%] pt-[10%] mx-auto tracking-widest">
+              <div class="size-[90px] bg-[#ffc503] grid mx-auto rounded-full">
+                  <i class="ri-quill-pen-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family:'Milligram Macro Trial';" class="block text-white text-center uppercase font-bold pt-[10px]">Logotipo</p>
+              </div>
+              <div class="size-[90px] bg-[#ffc503] grid mx-auto rounded-full">
+                  <i class="ri-input-method-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Tipografía</p>
+              </div>
+              <div class="size-[90px] bg-[#ffc503] grid mx-auto rounded-full">
+                  <i class="ri-focus-3-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Misión</p>
+              </div>
+              <div class="size-[90px] bg-[#ffc503] grid mx-auto rounded-full">
+                  <i class="ri-eye-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Visión</p>
+              </div>
+              <div class="size-[90px] bg-[#ffc503] grid mx-auto rounded-full">
+                  <i class="ri-palette-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="grid text-white text-center uppercase font-bold leading-tight pt-[10px]">Paleta</p>
+              </div>
+              <div class="size-[90px] bg-[#ffc503] grid mx-auto rounded-full">
+                  <i class="ri-shape-2-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="grid mx-auto text-white text-center uppercase font-bold leading-tight pt-[10px]">Elementos Gráficos</p>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div id="redesPop" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center" style="z-index: 1000;"> <!--Modal Redes-->
+      <div class="bg-[#242424] p-5 rounded-lg w-[1050px] h-[600px] flex flex-col" style="animation: modalOpen 0.5s ease-out;">
+        <div class="flex justify-between items-start">
+          <h3 class="mt-[5%] grote tracking-widest text-3xl font-medium mx-auto text-center bg-[#ff4d02] text-white w-[350px] uppercase pt-[0.5%]">
+            Redes Sociales
+          </h3>
+          <button class="close-modal text-3xl text-white" data-modal="redesPop"><i class="ri-close-circle-fill"></i></button>
+        </div>
+        <div class="p-4 md:p-5 space-y-4 ml-[12%] mt-[2%] mx-auto w-[400px]"> <!--Contenido Modal Redes-->
+          <p class="text-2xl font-bold leading-none miligram text-center mx-auto tracking-widest text-white w-[700px]">
+            Necesitas que tu tienda sea manejada por nosotros ya que tenemos experiencia en desarrollar estrategias efectivas, producir contenido visualmente atractivo y gestionar la comunidad y fidelidad. Además, al externalizar este trabajo, la tienda puede ahorrar tiempo y recursos, mientras se beneficia de la experiencia y el conocimiento especializado de profesionales en el área de las redes sociales. Esto garantiza que el contenido sea relevante, impactante y dirigido a alcanzar los objetivos de tu empresa.
+          </p>
+          <div class="grid mx-auto grid-flow-col-dense w-[800px] ml-[-12%] pt-[10%] mx-auto tracking-widest">
+            <div class="size-[90px] bg-[#ff4d02] grid mx-auto rounded-full">
+              <i class="ri-grid-line pl-[15px] text-[60px] text-white"></i>
+              <p style="font-family:'Milligram Macro Trial';" class="block text-white text-center uppercase font-bold pt-[10px]">Creación</p>
+            </div>
+            <div class="size-[90px] bg-[#ff4d02] grid mx-auto rounded-full">
+              <i class="ri-calendar-check-fill pl-[15px] text-[60px] text-white"></i>
+              <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold ml-[-25%] pt-[10px]">Plainificación</p>
+            </div>
+            <div class="size-[90px] bg-[#ff4d02] grid mx-auto rounded-full">
+              <i class="ri-draft-line pl-[15px] text-[60px] text-white"></i>
+              <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Redacción</p>
+            </div>
+            <div class="size-[90px] bg-[#ff4d02] grid mx-auto rounded-full">
+              <i class="ri-global-fill pl-[15px] text-[60px] text-white"></i>
+              <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Meta</p>
+            </div>
+            <div class="size-[90px] bg-[#ff4d02] grid mx-auto rounded-full">
+              <i class="ri-line-chart-fill pl-[15px] text-[60px] text-white"></i>
+              <p style="font-family: 'Milligram Macro Trial';"class="grid text-white text-center uppercase font-bold leading-tight pt-[10px]">Informe</p>
+            </div>
+            <div class="size-[90px] bg-[#ff4d02] grid mx-auto rounded-full">
+              <i class="ri-scan-line pl-[15px] text-[60px] text-white"></i>
+              <p style="font-family: 'Milligram Macro Trial';"class="grid mx-auto text-white text-center uppercase font-bold leading-tight pt-[10px]">Estrategias</p>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div id="paginaPop" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center" style="z-index: 1000;"> <!--Modal Diseño-->
+      <div class="bg-[#242424] p-5 rounded-lg w-[1050px] h-[650px] flex flex-col" style="animation: modalOpen 0.5s ease-out;">
+        <div class="flex justify-between items-start">
+          <h3 class="mt-[3%] grote tracking-widest text-3xl font-medium mx-auto text-center bg-[#ff97d6] text-[#242424] w-[300px] uppercase pt-[0.5%]">
+            Páginas Web
+          </h3>
+          <button class="close-modal text-3xl text-white" data-modal="paginaPop"><i class="ri-close-circle-fill"></i></button>
+        </div>
+        <div class="p-4 md:p-5 space-y-4 ml-[13%] mt-[2%] mx-auto w-[400px]"> <!--Contenido Modal Diseño-->
+          <p class="text-2xl font-bold leading-none miligram text-center tracking-widest text-white w-[700px]">
+            Trabajaremos en conjunto para que tu página web salga de cotidianidad e impacte al consumidor. manteniendo el equilibrio con una interfaz acorde a tus necesidades. Ya que contamos con experiencia en diseño, desarrollo y optimización de sitios web, lo que garantiza un resultado profesional y adaptado a tus necesidades. Además, pueden proporcionar mantenimiento continuo, actualizaciones y soporte técnico para asegurar que tu página funcione de manera óptima y se mantenga al día con las últimas tendencias y tecnologías. Esto te permite centrarte en tu negocio mientras confías en que tu presencia en línea está en buenas manos.
+          </p>
+          <div class="grid mx-auto grid-flow-col-dense w-[800px] ml-[-12%] pt-[10%] mx-auto tracking-widest">
+              <div class="size-[90px] bg-[#ff97d6] grid mx-auto rounded-full">
+                  <i class="ri-archive-drawer-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family:'Milligram Macro Trial';" class="block text-white text-center uppercase font-bold pt-[10px]">Host</p>
+              </div>
+              <div class="size-[90px] bg-[#ff97d6] grid mx-auto rounded-full">
+                  <i class="ri-artboard-2-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold leading-tight ml-[-15%] pt-[10px]">UX/UI (Experiencia de Usuario)</p>
+              </div>
+              <div class="size-[90px] bg-[#ff97d6] grid mx-auto rounded-full">
+                  <i class="ri-store-2-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase ml-[-20%] font-bold pt-[10px]">Marketplace</p>
+              </div>
+              <div class="size-[90px] bg-[#ff97d6] grid mx-auto rounded-full">
+                  <i class="ri-inbox-archive-fill pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase ml-[10%] leading-tight font-bold pt-[10px]">DB (Base de Datos)</p>
+              </div>
+              <div class="size-[90px] bg-[#ff97d6] grid mx-auto rounded-full">
+                  <i class="ri-links-fill pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="grid text-white text-center uppercase font-bold leading-tight pt-[10px]">Modulo Intranet</p>
+              </div>
+              <div class="size-[90px] bg-[#ff97d6] grid mx-auto rounded-full">
+                  <i class="ri-git-merge-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="grid mx-auto text-white text-center uppercase font-bold leading-tight pt-[10px]">APIs</p>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div id="rodajePop" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center" style="z-index: 1000;"> <!--Modal Diseño-->
+      <div class="bg-[#242424] p-5 rounded-lg w-[1050px] h-[450px] flex flex-col" style="animation: modalOpen 0.5s ease-out;">
+        <div class="flex justify-between items-start">
+          <h3 class="mt-[3%] grote tracking-widest text-3xl font-medium mx-auto text-center bg-[#02deb5] text-[#242424] w-[240px] uppercase pt-[0.5%]">
+            Rodaje
+          </h3>
+          <button class="close-modal text-3xl text-white" data-modal="rodajePop"><i class="ri-close-circle-fill"></i></button>
+        </div>
+        <div class="p-4 md:p-5 space-y-4 ml-[12%] mt-[2%] mx-auto w-[400px]"> <!--Contenido Modal Diseño-->
+          <p class="text-2xl font-bold leading-none miligram text-center tracking-widest text-white w-[700px]">
+            Tener contenido de calidad de tus productos y/o servicios es dar vida a la historia de tu negocio con vídeos cautivadores y visualmente impactantes, mejorando la conexión con tu audiencia y aumentando la visibilidad de tu marca.
+          </p>
+          <div class="grid mx-auto grid-flow-col-dense w-[800px] ml-[-12%] pt-[10%] mx-auto tracking-widest">
+              <div class="size-[90px] bg-[#02deb5] grid mx-auto rounded-full">
+                  <i class="ri-dv-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family:'Milligram Macro Trial';" class="block text-white text-center uppercase font-bold pt-[10px]">Filmmaker</p>
+              </div>
+              <div class="size-[90px] bg-[#02deb5] grid mx-auto rounded-full">
+                  <i class="ri-camera-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase ml-[-15%] font-bold pt-[10px]">Fotografías</p>
+              </div>
+              <div class="size-[90px] bg-[#02deb5] grid mx-auto rounded-full">
+                  <i class="ri-camera-lens-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Drone</p>
+              </div>
+              <div class="size-[90px] bg-[#02deb5] grid mx-auto rounded-full">
+                  <i class="ri-polaroid-line pl-[15px] text-[60px] text-[#242424]"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Más</p>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div id="gestionPop" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center" style="z-index: 1000;"> <!--Modal Diseño-->
+      <div class="bg-[#242424] p-5 rounded-lg w-[1050px] h-[550px] flex flex-col" style="animation: modalOpen 0.5s ease-out;">
+        <div class="flex justify-between items-start">
+          <h3 class="mt-[2%] grote tracking-widest inline-block text-3xl align-bottom font-medium mx-auto text-center bg-[#3232cf] text-white h-[40px] w-[430px] uppercase pt-[0.5%]">
+            Gestión de Medios
+          </h3>
+          <button class="close-modal text-3xl text-white" data-modal="gestionPop"><i class="ri-close-circle-fill"></i></button>
+        </div>
+        <div class="p-4 md:p-5 space-y-4 ml-[12%] mt-[2%] mx-auto w-[400px]"> <!--Contenido Modal Diseño-->
+          <p class="text-2xl font-bold leading-none miligram text-center tracking-widest text-white w-[700px]">
+            Estamos al tanto de las últimas tendencias, técnicas y herramientas disponibles para maximizar el retorno de la inversión en publicidad. Además, tenemos la capacidad de crear campañas personalizadas y dirigidas a tu público objetivo, lo que aumenta la efectividad de tus esfuerzos de marketing. Al confiar en una agencia, puedes obtener resultados más sólidos y enfocarte en otras áreas clave de tu negocio mientras dejas el marketing en manos de expertos.
+          </p>
+          <div class="grid mx-auto grid-flow-col-dense w-[850px] ml-[-20%] pt-[10%] mx-auto tracking-widest">
+              <div class="size-[90px] bg-[#3232cf] grid mx-auto rounded-full">
+                  <i class="ri-smartphone-line pl-[15px] text-[60px] text-white"></i>
+                  <p style="font-family:'Milligram Macro Trial';" class="block text-white text-center uppercase font-bold pt-[10px]">Marketing Digital</p>
+              </div>
+              <div class="size-[90px] bg-[#3232cf] grid mx-auto rounded-full">
+                  <i class="ri-draft-line pl-[15px] text-[60px] text-white"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold ml-[-15%] pt-[10px]">Marketing Tradicional</p>
+              </div>
+              <div class="size-[90px] bg-[#3232cf] grid mx-auto rounded-full">
+                  <i class="ri-receipt-line pl-[15px] text-[60px] text-white"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Folletería</p>
+              </div>
+              <div class="size-[90px] bg-[#3232cf] grid mx-auto rounded-full">
+                  <i class="ri-car-line pl-[15px] text-[60px] text-white"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="block text-white text-center uppercase font-bold pt-[10px]">Vía Pública</p>
+              </div>
+              <div class="size-[90px] bg-[#3232cf] grid mx-auto rounded-full">
+                  <i class="ri-store-2-line pl-[15px] text-[60px] text-white"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="grid text-white text-center uppercase font-bold leading-tight pt-[10px]">Freebie</p>
+              </div>
+              <div class="size-[90px] bg-[#3232cf] grid mx-auto rounded-full">
+                  <i class="ri-hotel-line pl-[15px] text-[60px] text-white"></i>
+                  <p style="font-family: 'Milligram Macro Trial';"class="grid mx-auto text-white text-center uppercase font-bold leading-tight ml-[-27%] pt-[10px]">Eventos Corporativos</p>
+              </div>
+              <div class="size-[90px] bg-[#3232cf] grid mx-auto rounded-full">
+                <i class="ri-global-line pl-[15px] text-[60px] text-white"></i>
+                <p style="font-family: 'Milligram Macro Trial';"class="grid mx-auto text-white text-center uppercase font-bold leading-tight pt-[10px]">Creadores</p>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="js/ventanas.js"></script>
 </html>
